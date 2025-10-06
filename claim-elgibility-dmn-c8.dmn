@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1bkhvvt" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.34.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.7.0">
+  <decision id="Decision_Claim_Elgibility" name="Claim Elgibility">
+    <decisionTable id="DecisionTable_0ax5mrp">
+      <input id="Input_1" label="Plan Type">
+        <inputExpression id="InputExpression_1" typeRef="string">
+          <text></text>
+        </inputExpression>
+        <inputValues id="UnaryTests_02lnhko">
+          <text>"Gold","Silver"</text>
+        </inputValues>
+      </input>
+      <input id="InputClause_0cftca3" label="Pre-Existing Condtions">
+        <inputExpression id="LiteralExpression_0zg5fxf" typeRef="string">
+          <text></text>
+        </inputExpression>
+        <inputValues id="UnaryTests_12dw2p6">
+          <text>"Yes","No","Any"</text>
+        </inputValues>
+      </input>
+      <input id="InputClause_124oxan" label="Waiting Period Over">
+        <inputExpression id="LiteralExpression_1gsu1if" typeRef="string">
+          <text></text>
+        </inputExpression>
+        <inputValues id="UnaryTests_0xih64b">
+          <text>"Yes","No"</text>
+        </inputValues>
+      </input>
+      <output id="Output_1" label="Treatment Cover" name="treatmentCover" typeRef="string">
+        <outputValues id="UnaryTests_0xbf2j7">
+          <text>"Yes","No"</text>
+        </outputValues>
+      </output>
+      <rule id="DecisionRule_16t6g9v">
+        <inputEntry id="UnaryTests_0gvd7ml">
+          <text>"Gold"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09brgmo">
+          <text>"No"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fojk4j">
+          <text>"Yes"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1bsv9wf">
+          <text>"Yes"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0c4nehq">
+        <inputEntry id="UnaryTests_029wbc5">
+          <text>"Silver"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08g15f5">
+          <text>"Yes"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vm3oe0">
+          <text>"No"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_04xrm8g">
+          <text>"No"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1k7wrcj">
+        <inputEntry id="UnaryTests_00whzs0">
+          <text>"Silver"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1anl3u3">
+          <text>"No"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06sgl75">
+          <text>"Yes"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0fb719g">
+          <text>"Yes"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0eqqs7v">
+        <inputEntry id="UnaryTests_0290ff2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12zqfx8">
+          <text>"Any"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1iyoxw1">
+          <text>"No"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1kyce19">
+          <text>"No"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="Decision_Claim_Elgibility">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
